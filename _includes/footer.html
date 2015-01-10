@@ -1,56 +1,47 @@
-<div class="ui inverted footer vertical segment">
-  <div class="ui stackable page grid">
-    <div class="ten wide column">
-      <div class="ui three column stackable grid">
-        <div class="column">
-          <h5 class="ui inverted header">Theme</h5>
-          <div class="ui inverted link list">
-            <a class="item" href="/blog/">Blog</a>
-            <a class="item" href="/category/#theme">Theme Features</a>
-            <a class="item" href="/tag/#embeds">Embed Plugins</a>
-          </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>{{ site.footer.location }}</h3>
+                        <p>
+                            {% for adress in site.address %}
+                                {{ adress.line }} <br>
+		                    {% endfor %}
+                        </p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>{{ site.footer.social }}</h3>
+                        <ul class="list-inline">
+                            {% for network in site.social %}
+                            <li>
+                                <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
+                            </li>
+		                    {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>{{ site.footer.credits }}</h3>
+                        <p>{{ site.credits }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="column">
-          <h5 class="ui inverted header">Design</h5>
-          <div class="ui inverted link list">
-            <a class="item" href="{% post_url /blog/2014-12-15-content-strategy-for-startup-websites %}">Content Strategy</a>
-            <a class="item" href="/kitchensink/">Semantic UI Examples</a>
-            <a class="item" href="http://semantic-ui.com/">Semantic UI Site</a>
-          </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; {{ site.footer.copyright }} 20{{ site.time | date: '%y' }}
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="column">
-          <h5 class="ui inverted header">GitHub</h5>
-          <div class="ui inverted link list">
-            <a class="item" href="https://github.com/open-start/opentheme">Get OpenTheme</a>
-            <a class="item" href="{% post_url /blog/2014-11-26-open-cloud-based-workflow-for-designing-your-website %}">Cloud Workflow</a>
-            <a class="item" href="{% post_url /blog/2014-12-2-data-driven-web-apps-using-github %}">Data Apps</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="six wide column">
-      <div class="ui two column stackable grid">
-        <div class="column">
-          <h5 class="ui inverted header">Social</h5>
-          <div class="ui inverted link list">
-            <a class="item" href="https://twitter.com/{{ site.twitter_username }}"><i class="twitter icon"></i> Twitter</a>
-            <a class="item" href="https://github.com/{{ site.github_username }}"><i class="github icon"></i> GitHub</a>
-            <a class="item" href="{{ site.url }}/feed.xml"><i class="rss icon"></i> Feed</a>
-          </div>
-        </div>
-        <div class="column">
-          <h5 class="ui inverted header">Contact Us</h5>
-          <addr>
-            123 Your Address Here <br>
-            State, City <br>
-          </addr>
-          <p>(000) 123-4567</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </footer>
 
-<div class="ui center aligned segment copyright">
-  <i class="world icon"></i> Copyright &copy; {{ site.time | date: "%Y" }}, {{ site.copyright }}.
-</div>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
